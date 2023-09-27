@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "vite-node ./src/index.ts"
+  },
   "keywords": [
     "node.js",
     "express",
@@ -16,6 +18,13 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.18",
-    "@types/node": "^20.7.0"
+    "@types/node": "^20.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-node": "^0.34.5"
   }
 }
