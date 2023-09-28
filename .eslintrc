@@ -1,6 +1,14 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"]
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "prettier"
+  ],
+  "rules": {
+    "simple-import-sort/imports": "error"
+  },
+  "ignorePatterns": ["node_modules/*", "dist/*"]
 }
