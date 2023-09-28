@@ -1,5 +1,5 @@
 import { ServerOptions, createServer } from 'http';
-import { SERVER_PORT, SERVER_HOST } from 'config';
+import { config } from 'config';
 import { app } from 'app';
 
 const serverOptions: ServerOptions = {
@@ -8,7 +8,7 @@ const serverOptions: ServerOptions = {
 
 const server = createServer(serverOptions, app);
 
-server.listen(SERVER_PORT, SERVER_HOST);
+server.listen('8080');
 server.on('listening', () =>
-  console.log(`Server listening at: http://${SERVER_HOST}:${SERVER_PORT}`),
+  console.log(`Server listening at: http://localhost:${config.SERVER_PORT}`),
 );

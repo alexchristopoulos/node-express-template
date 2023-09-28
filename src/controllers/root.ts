@@ -1,13 +1,4 @@
-import { Router, IRouter } from "express";
+import { NextFunction, Request, Response } from 'express';
 
-const router: IRouter = Router();
-
-router.get("/", (req, res) =>
-  res
-    .json({
-      message: "Hello world!",
-    })
-    .status(200)
-);
-
-export { router };
+export const getRoot = (req: Request, res: Response, next: NextFunction) =>
+  res.sendStatus(200);

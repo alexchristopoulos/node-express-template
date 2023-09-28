@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean:dist": "rimraf ./dist",
     "dev": "nodemon --exec vite-node ./src/index.ts",
+    "build": "pnpm clean:dist && vite build",
     "lint": "eslint"
   },
   "keywords": [
@@ -29,8 +31,11 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "rollup-plugin-node-externals": "^6.1.1",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
-    "vite-node": "^0.34.5"
+    "vite-node": "^0.34.5",
+    "vite-plugin-dts": "^3.6.0"
   }
 }

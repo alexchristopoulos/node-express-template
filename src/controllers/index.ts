@@ -1,1 +1,1 @@
-export { router as rootRouter } from "./root";
+export { getRoot } from './root';
