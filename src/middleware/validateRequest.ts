@@ -1,15 +1,13 @@
 import { Request, Response } from 'express';
 import { Schema } from 'joi';
-import { RequestError } from 'utils/error';
+import { BadRequestError } from 'utils/error/BadRequestError';
 
 export const validateRequest =
-  async (schema: Schema) => async (req: Request, res: Response) => {
+  async (schema: Schema, data?: Record<string | number | symbol, unknown>) =>
+  async (req: Request, res: Response) => {
     try {
-      await schema.validateAsync(req.body);
+      await schema.validateAsync(data ? data : req.body);
     } catch (err) {
-      throw new RequestError(400, {
-        code: 'ValidationError',
-        message: 'Bad Request',
-      });
+      throw new BadRequestError('Bad request', 'ValidationError');
     }
   };

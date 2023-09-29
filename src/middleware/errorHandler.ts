@@ -1,4 +1,4 @@
-import { RequestError } from '../utils';
+import { RequestError } from 'utils/error/RequestError';
 import { Request, Response, NextFunction } from 'express';
 
 export const errorMiddleware = (
@@ -7,21 +7,21 @@ export const errorMiddleware = (
   res: Response,
   _next: NextFunction,
 ) => {
-  const { code, status, message } =
+  const { httpStatusCode, message, errorCode } =
     err instanceof RequestError
       ? {
-          code: err.getCode(),
-          status: err.getStatus(),
+          httpStatusCode: err.getStatusCode(),
           message: err.message,
+          errorCode: err.getErrorCode(),
         }
       : {
-          code: 'UnknownError',
-          status: 522,
+          httpStatusCode: 522,
           message: 'Unknown Error Occurred',
+          errorCode: 'UnknownError',
         };
 
-  res.status(status).json({
-    code,
+  res.status(httpStatusCode).json({
     message,
+    errorCode,
   });
 };
