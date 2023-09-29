@@ -19,4 +19,11 @@ export abstract class RequestError extends Error {
   getStatusCode() {
     return this.statusCode;
   }
+
+  serialize() {
+    return {
+      code: this.errorCode,
+      detail: this.message,
+    };
+  }
 }
