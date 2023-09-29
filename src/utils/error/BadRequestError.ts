@@ -14,7 +14,10 @@ export class BadRequestError extends RequestError {
   serialize() {
     return {
       code: this.getErrorCode(),
-      detail: this.error.details.toString(),
+      detail: this.error.details.map((detail) => ({
+        field: detail.path.toString(),
+        cause: detail.message,
+      })),
     };
   }
 }

@@ -11,6 +11,6 @@ const result = joi
   .validate(config);
 
 if (result.error) {
-  console.log(JSON.stringify(result.error.details));
+  console.log(result.error.details);
   process.exit(1);
 }

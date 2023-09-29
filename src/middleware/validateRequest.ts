@@ -3,10 +3,11 @@ import { Schema, ValidationError } from 'joi';
 import { BadRequestError } from 'utils/error/BadRequestError';
 
 export const validateRequest =
-  async (schema: Schema, data?: Record<string | number | symbol, unknown>) =>
-  async (req: Request, _res: Response, _next: NextFunction) => {
+  (schema: Schema, data?: Record<string | number | symbol, unknown>) =>
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       await schema.validateAsync(data ? data : req.body);
+      return next();
     } catch (err) {
       throw new BadRequestError(err as ValidationError);
     }

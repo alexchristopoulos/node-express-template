@@ -1,3 +1,8 @@
+type SerializeResult = {
+  code: string;
+  detail: string | object;
+};
+
 export abstract class RequestError extends Error {
   private errorCode: string;
   abstract statusCode: number;
@@ -20,7 +25,7 @@ export abstract class RequestError extends Error {
     return this.statusCode;
   }
 
-  serialize() {
+  serialize(): SerializeResult {
     return {
       code: this.errorCode,
       detail: this.message,
