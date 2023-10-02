@@ -1,6 +1,6 @@
-import { RequestError } from 'utils/error/RequestError';
+import { RequestError } from 'utils/errors/RequestError';
 import { Request, Response, NextFunction } from 'express';
-import { UnknownError } from 'utils/error/UnknownError';
+import { UnknownError } from 'utils/errors/UnknownError';
 
 export const errorMiddleware = (
   err: Error,

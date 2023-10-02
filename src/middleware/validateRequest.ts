@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { Schema, ValidationError } from 'joi';
-import { BadRequestError } from 'utils/error/BadRequestError';
+import { BadRequestError } from 'utils/errors/BadRequestError';
 
 export const validateRequest =
   (schema: Schema, data?: Record<string | number | symbol, unknown>) =>
