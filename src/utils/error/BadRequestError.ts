@@ -6,7 +6,7 @@ export class BadRequestError extends RequestError {
   private error;
 
   constructor(error: ValidationError) {
-    super('Validation failed', 'ValidationError');
+    super('Bad request', 'BadRequestError');
     this.error = error;
     Object.setPrototypeOf(this, BadRequestError.prototype);
   }
