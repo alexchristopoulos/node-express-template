@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { calculateMessage } from 'services/root';
+import { calculateMessage } from 'services';
 
 export const getRoot = (req: Request, res: Response) => {
   const { name } = req.query;

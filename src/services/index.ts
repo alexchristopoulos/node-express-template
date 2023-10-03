@@ -1,0 +1,1 @@
+export { calculateMessage } from './root';
