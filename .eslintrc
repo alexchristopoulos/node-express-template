@@ -15,7 +15,7 @@
     {
       "files": "*.ts",
       "rules": {
-        "no-unused-vars": "off",
+        "no-unused-vars": "warn",
         "simple-import-sort/imports": "error"
       },
       "parserOptions": {
