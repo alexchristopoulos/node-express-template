@@ -1,1 +1,1 @@
-export { calculateMessage } from './root';
+export { calculateMessage, createMessage, getAllMessages } from './root';

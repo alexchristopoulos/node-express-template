@@ -8,7 +8,13 @@
     "prettier"
   ],
   "rules": {
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ]
   },
   "ignorePatterns": ["node_modules/*", "dist/*"],
   "overrides": [
