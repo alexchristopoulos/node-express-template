@@ -1,5 +1,6 @@
-import { RequestError } from './RequestError';
 import { ValidationError } from 'joi';
+
+import { RequestError } from './RequestError';
 
 export class BadRequestError extends RequestError {
   statusCode = 400;

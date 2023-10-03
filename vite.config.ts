@@ -1,7 +1,8 @@
-import { AliasOptions, defineConfig } from 'vite';
-import { compilerOptions } from './tsconfig.json';
 import { resolve } from 'path';
+import { AliasOptions, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+
+import { compilerOptions } from './tsconfig.json';
 
 const { paths, baseUrl } = compilerOptions;
 const normalizePathRegex = new RegExp(/[/][*]/g);

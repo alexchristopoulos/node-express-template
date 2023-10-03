@@ -1,5 +1,5 @@
 import { getRoot } from 'controllers/root';
-import { Router, IRouter } from 'express';
+import { IRouter, Router } from 'express';
 
 const router: IRouter = Router();
 

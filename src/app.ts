@@ -1,8 +1,9 @@
 import 'express-async-errors';
+
 import express, { Application } from 'express';
-import { rootRouter } from 'routes';
 import { errorMiddleware } from 'middleware/errorMiddleware';
 import { notFoundMiddleware } from 'middleware/notFoundMiddleware';
+import { rootRouter } from 'routes';
 
 const app: Application = express();
 

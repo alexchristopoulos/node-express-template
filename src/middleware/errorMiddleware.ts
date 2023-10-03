@@ -1,11 +1,12 @@
+import { NextFunction, Request, Response } from 'express';
 import { RequestError } from 'utils/errors/RequestError';
-import { Request, Response, NextFunction } from 'express';
 import { UnknownError } from 'utils/errors/UnknownError';
 
 export const errorMiddleware = (
   err: Error,
   req: Request,
   res: Response,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   next: NextFunction,
 ) => {
   if (err instanceof RequestError)
