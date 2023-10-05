@@ -21,7 +21,7 @@ const logger = pino(
   pino.multistream(streams),
 );
 
-const loggerMiddlware = pinoHttp({
+const loggerMiddleware = pinoHttp({
   logger: logger,
   serializers: {
     req: (req: Request) => ({
@@ -36,4 +36,4 @@ const loggerMiddlware = pinoHttp({
   },
 });
 
-export { logger, loggerMiddlware };
+export { logger, loggerMiddleware };

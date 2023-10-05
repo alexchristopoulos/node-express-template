@@ -4,12 +4,12 @@ import express, { Application } from 'express';
 import { errorMiddleware } from 'middleware/errorMiddleware';
 import { notFoundMiddleware } from 'middleware/notFoundMiddleware';
 import { rootRouter } from 'routes';
-import { loggerMiddlware } from 'utils/logger';
+import { loggerMiddleware } from 'utils/logger';
 
 const app: Application = express();
 
 app.use(express.json());
-app.use(loggerMiddlware);
+app.use(loggerMiddleware);
 
 app.use('/', rootRouter);
 
